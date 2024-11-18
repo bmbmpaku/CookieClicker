@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Scorecard from "./components/Scorecard";
 import { useState, useEffect } from "react";
 import GCButton from "./components/GCButton";
-import "./app.css";
+import "../src/App.css";
 import Upgrade from "./components/Upgrades";
 
 export default function App() {
