@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Button from "./Button";
-import Upgrade from "./upgrades";
+import Button from "..components/Button";
+import Upgrade from "..components/upgrades";
 
 const Controls = ({ buyTopping, buyJarUpgrade }) => {
   return (
