@@ -22,90 +22,70 @@ header {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 .app-container {
-  nav {
-    display: inline-flexbox;
-    justify-items: auto;
-    background-color: bisque;
-    grid-column: span 4;
-    grid-row-start: 2;
-    grid-row-end: 5;
-  }
-  .maingamecontrols {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    max-width: 45vh;
-    padding: 10px;
-  }
-  .T2gamecontrols {
-    display: flex;
-    flex-direction: column;
-    max-width: 45vh;
-    align-content: center;
-    padding: 10px;
-  }
-  .toppinglist {
-    display: flex;
-    flex-direction: column;
-    border-radius: 10%;
-    border-width: 3px;
-    padding: 10px;
-    border-color: #fca164;
-  }
-  .scorecard {
-    display: flex;
-    flex-direction: column;
-    border-radius: 5%;
-    border-width: 2px;
-    width: 70%;
-    background-image: url(./images/cookies.png);
-    container: 70%;
-    align-self: center;
-  }
-  h1,
-  p {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    color: #222;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background: #fff;
-    font: 100% system-ui;
-  }
-  body.dark-theme {
-    background: #121212;
-    --text-color: #fff;
-  }
-  body.dark-theme h1,
-  body.dark-theme h2,
-  body.dark-theme ul,
-  body.dark-theme p {
-    color: #eee;
-    --text-color: #eee;
-  }
-  body.dark-theme a {
-    color: #809fff;
-  }
-  body.light-theme {
-    --text-color: #222;
-    --bkg-color: #fff;
-  }
-  body.light-theme h2 {
-    --text-color: #fff;
-  }
 }
 
+nav {
+  display: inline-flexbox;
+  justify-items: auto;
+  background-color: bisque;
+  grid-column: span 4;
+  grid-row-start: 2;
+  grid-row-end: 5;
+}
+.maingamecontrols {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 45vh;
+  padding: 10px;
+}
+.GCButton {
+  display: flex;
+  flex-direction: column;
+  max-width: 45vh;
+  align-content: center;
+  padding: 10px;
+}
+.Upgrades {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10%;
+  border-width: 3px;
+  padding: 10px;
+  border-color: #fca164;
+}
+.scorecard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5%;
+  border-width: 2px;
+  width: 70%;
+  background-image: url(./images/cookies.png);
+  container: 70%;
+  align-self: center;
+}
+h1,
+p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #222;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #fff;
+  font: 100% system-ui;
+}
 .dark-theme {
   background-color: #121212;
   color: #ffffff;
+  --text-color: #000000;
 }
 
 .light-theme {
   background-color: #ffffff;
   color: #000000;
+  --text-color: #eee;
 }
 
 @keyframes logo-spin {
