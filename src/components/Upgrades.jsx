@@ -6,7 +6,9 @@ const Upgrade = ({ upgrade, buyUpgrade }) => {
   return (
     <div className="upgrade">
       <p>
-        {upgrade.name} - {upgrade.cost} cookies - Gives {upgrade.increase} CPS
+        {upgrade.name}
+        <p>{upgrade.cost} cookies</p>
+        <p>- Gives {upgrade.increase} CPS</p>
       </p>
       <button onClick={() => buyUpgrade(upgrade)}>Buy</button>
     </div>

@@ -4,8 +4,9 @@ import Header from "./components/Header";
 import Scorecard from "./components/Scorecard";
 import { useState, useEffect } from "react";
 import GCButton from "./components/GCButton";
-import "../src/App.css";
+import "../src/new.css";
 import Upgrade from "./components/Upgrades";
+import Container from "./components/Container";
 
 export default function App() {
   const [cookies, setCookies] = useState(0);
@@ -24,7 +25,7 @@ export default function App() {
           "https://cookie-upgrade-api.vercel.app/api/upgrades"
         );
         const data = await response.json();
-        setUpgrades(data);
+        setUpgrades(data.slice(0, 3));
       } catch (error) {
         console.error("Error fetch upgrades", error);
       }
@@ -80,7 +81,7 @@ export default function App() {
   const resetGame = () => {
     setCookies(0);
     setCps(1);
-    setJarsize(200);
+    setJarsize(500);
     setToppings(0);
     setGameStarted(false);
   };
@@ -143,6 +144,8 @@ export default function App() {
         <p>This Game is simple</p>
         <p className="howtoplay">How to play</p>
       </div>
+      <div className="instructns"></div>
+      <Container />
       <Scorecard
         cookies={cookies}
         cps={cps}
@@ -158,17 +161,20 @@ export default function App() {
         <div className="toppings-upgrades">
           {toppingsList.map((toppingsList) => (
             <div key={toppingsList.id} className="topping">
+              <p>{toppingsList.name} </p>
+              <p>{toppingsList.cost} cookies </p>
               <p>
-                {toppingsList.name} - {toppingsList.cost} cookies - +
+                {" "}
+                - Gives
                 {toppingsList.cpsBoost} CPS
               </p>
               <button onClick={() => buyTopping(toppingsList)}>Buy</button>
             </div>
           ))}
           <div className="jar-upgrade">
-            <p>
-              {jarUpgrade.name} - {jarUpgrade.cost} toppings - Doubles jar size
-            </p>
+            <p>{jarUpgrade.name} -</p>
+            <p>{jarUpgrade.cost} toppings</p>
+            <p>- Doubles jar size</p>
             <button onClick={buyJarUpgradeFunc}>Buy</button>
           </div>
         </div>
