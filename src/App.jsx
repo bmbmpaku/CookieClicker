@@ -110,10 +110,10 @@ export default function App() {
     bonus: 1.2,
   };
 
-  const buyTopping = (topping) => {
-    if (cookies >= topping.cost) {
-      setCookies(cookies - topping.cost);
-      setCps(cps + topping.cpsBoost);
+  const buyTopping = (toppingsList) => {
+    if (cookies >= toppingsList.cost) {
+      setCookies(cookies - toppingsList.cost);
+      setCps(cps + toppingsList.cpsBoost);
       setToppings(toppings + 1);
     } else {
       alert("Not enough cookies!");
@@ -156,13 +156,13 @@ export default function App() {
           <Upgrade key={upgrade.id} upgrade={upgrade} buyUpgrade={buyUpgrade} />
         ))}
         <div className="toppings-upgrades">
-          {toppingsList.map((topping) => (
-            <div key={topping.id} className="topping">
+          {toppingsList.map((toppingsList) => (
+            <div key={toppingsList.id} className="topping">
               <p>
-                {topping.name} - {topping.cost} cookies - +{topping.cpsBoost}{" "}
-                CPS
+                {toppingsList.name} - {toppingsList.cost} cookies - +
+                {toppingsList.cpsBoost} CPS
               </p>
-              <button onClick={() => buyTopping(topping)}>Buy</button>
+              <button onClick={() => buyTopping(toppingsList)}>Buy</button>
             </div>
           ))}
           <div className="jar-upgrade">
